@@ -1,0 +1,452 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#categoryDiv {
+    margin-top: 10%;
+    height: 600px;
+    width: 70%;
+    text-align: center;
+    border-radius: 60px;
+    font-family: 'Helvetica Light';
+    padding: 20px;
+
+}
+
+
+
+#selectionDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    opacity: 0;
+
+    animation: fadeIn 0.5s ease-in forwards 1s;
+}
+
+h1 {
+    font-family: 'Verdana';
+    font-weight: lighter;
+    font-size:45px;
+    color: rgb(79, 79, 79);
+
+    animation: fadeIn 0.5s ease-in forwards;
+}
+
+h3 {
+    font-family: 'Verdana';
+    font-weight: lighter;
+    color: gray;
+
+    opacity: 0;
+
+    animation: fadeIn 0.5s ease-in forwards 0.5s;
+}
+
+button {
+    width: 300px;
+    height: 200px;
+    background: linear-gradient(90deg, #353535, #0c0c0c) border-box;
+    border-radius: 30px;
+    border-color: transparent;
+    transition: all 0.3s ease-in-out;
+}
+button img {
+    height:160px;
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    cursor: pointer;
+}
+button:hover img {
+    transform: scale(1.15);
+}
+
+hr {
+    width: 100%;
+    height: 2px;
+    border: none;
+    background:linear-gradient(to right,  #6ee9db, #9948e5);
+
+}
+
+
+#bottomHr {
+    width: 50%;
+    height: 2px;
+}
+.restartQuiz {
+    margin-top: 20px;
+
+    background:#6ee9db;
+    color: rgb(0, 0, 0);
+    height: 50px;
+    width: 200px;
+    font-size: 20px;
+    font-family:"Verdana";
+
+    transition: all 0.3s ease-in-out;
+
+}
+.restartQuiz:hover {
+    background:#c28af6;
+}
+/*
+NBA Questions Styling Section
+*/
+
+#categoryDiv.nba {
+    color: black;
+    background-color: rgb(25, 25, 25);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    justify-content: center;
+
+}
+#categoryDiv.nba.fade {
+    animation: fadeIn 0.3s ease-in forwards;
+}
+#categoryDiv.nba h2{
+    background-image: linear-gradient(90deg, #6ee9db, #af5cfc);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text; 
+}
+#categoryDiv.nba label {
+    color: rgb(255, 255, 255);
+    font-family: 'Helvetica';
+    font-weight: bold;
+}
+.userChoice {
+    margin-right: 10px;
+    margin-left: 20px;
+}
+.submitAnswer {
+    margin-top: 20px;
+
+    background:#6ee9db;
+    color: rgb(0, 0, 0);
+    height: 50px;
+    width: 200px;
+    font-size: 20px;
+    font-family:"Verdana";
+
+    transition: all 0.3s ease-in-out;
+    
+}
+.submitAnswer:hover {
+    background-color:#c28af6;
+}
+
+/*
+NFL Questions Styling Section
+*/
+
+
+#categoryDiv.nfl {
+    color: black;
+    background-color: rgb(25, 25, 25);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    justify-content: center;
+
+}
+#categoryDiv.nfl.fade {
+    animation: fadeIn 0.3s ease-in forwards;
+}
+#categoryDiv.nfl h2{
+    background-image: linear-gradient(90deg, #6ee9db, #af5cfc);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text; 
+}
+#categoryDiv.nfl label {
+    color: rgb(255, 255, 255);
+    font-family: 'Helvetica';
+    font-weight: bold;
+}
+.userChoice {
+    margin-right: 10px;
+    margin-left: 20px;
+}
+.submitNflButton {
+    margin-top: 20px;
+
+    background:#6ee9db;
+    color: rgb(0, 0, 0);
+    height: 50px;
+    width: 200px;
+    font-size: 20px;
+    font-family:"Verdana";
+
+    transition: all 0.3s ease-in-out;
+    
+}
+.submitNflButton:hover {
+    background-color:#c28af6;
+}
+/*
+BOXING Questions
+*/
+
+
+#categoryDiv.boxing {
+    color: black;
+    background-color: rgb(25, 25, 25);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    justify-content: center;
+
+}
+#categoryDiv.boxing.fade {
+    animation: fadeIn 0.3s ease-in forwards;
+}
+#categoryDiv.boxing h2{
+    background-image: linear-gradient(90deg, #6ee9db, #af5cfc);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text; 
+}
+#categoryDiv.boxing label {
+    color: rgb(255, 255, 255);
+    font-family: 'Helvetica';
+    font-weight: bold;
+}
+.userChoice {
+    margin-right: 10px;
+    margin-left: 20px;
+}
+.boxingButton {
+    margin-top: 20px;
+
+    background:#6ee9db;
+    color: rgb(0, 0, 0);
+    height: 50px;
+    width: 200px;
+    font-size: 20px;
+    font-family:"Verdana";
+
+    transition: all 0.3s ease-in-out;
+    
+}
+.boxingButton:hover {
+    background-color:#c28af6;
+}
+
+
+
+@keyframes fadeIn {
+    0% {
+        transform:translateY(3%);
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        transform:translateY(0%);
+    }
+}
+@keyframes lineEntry {
+    0% {
+        transform:scaleX(0%);
+
+    } 
+    100% {
+        transform:scaleX(100%);
+
+    }
+}
+
+
+/* ============================= */
+/*       MOBILE RESPONSIVENESS   */
+/* ============================= */
+
+@media screen and (max-width: 768px) {
+
+    body {
+        padding: 15px;
+        box-sizing: border-box;
+    }
+
+    #categoryDiv {
+        margin-top: 8%;
+        width: 95%;
+        height: auto;
+        min-height: 500px;
+        padding: 20px 15px;
+        box-sizing: border-box;
+        border-radius: 35px;
+    }
+
+    #selectionDiv {
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 32px;
+        text-align: center;
+    }
+
+    h3 {
+        font-size: 17px;
+        text-align: center;
+    }
+
+    button {
+        max-width: 300px;
+        width: 90%;
+        height: 160px;
+        border-radius: 25px;
+    }
+
+    button img {
+        height: 120px;
+        max-width: 90%;
+        object-fit: contain;
+    }
+
+    hr {
+        width: 90%;
+    }
+
+    #bottomHr {
+        width: 70%;
+    }
+
+    .restartQuiz,
+    .submitAnswer,
+    .submitNflButton,
+    .boxingButton {
+        width: 180px;
+        height: 48px;
+        font-size: 16px;
+    }
+
+    /* ========================= */
+    /*       QUIZ QUESTIONS      */
+    /* ========================= */
+
+    #categoryDiv.nba,
+    #categoryDiv.nfl,
+    #categoryDiv.boxing {
+        display: block;
+
+        width: 95%;
+        min-height: 500px;
+        height: auto;
+        padding: 30px 15px;
+        gap: 15px;
+    }
+
+    #categoryDiv.nba h2,
+    #categoryDiv.nfl h2,
+    #categoryDiv.boxing h2 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    #categoryDiv.nba label,
+    #categoryDiv.nfl label,
+    #categoryDiv.boxing label {
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
+    .userChoice {
+        margin-left: 5px;
+        margin-right: 8px;
+    }
+    .radioDiv {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+
+/* ============================= */
+/*       SMALLER PHONES          */
+/* ============================= */
+
+@media screen and (max-width: 400px) {
+
+    #categoryDiv {
+        width: 100%;
+        padding: 15px 10px;
+        border-radius: 25px;
+    }
+
+    #selectionDiv {
+        gap: 15px;
+    }
+
+    h1 {
+        font-size: 27px;
+    }
+
+    h3 {
+        font-size: 15px;
+    }
+
+    button {
+        height: 135px;
+        width: 95%;
+    }
+
+    button img {
+        height: 100px;
+    }
+
+    #categoryDiv.nba,
+    #categoryDiv.nfl,
+    #categoryDiv.boxing {
+        width: 100%;
+        padding: 25px 10px;
+    }
+
+    #categoryDiv.nba h2,
+    #categoryDiv.nfl h2,
+    #categoryDiv.boxing h2 {
+        font-size: 18px;
+    }
+
+    #categoryDiv.nba label,
+    #categoryDiv.nfl label,
+    #categoryDiv.boxing label {
+        font-size: 14px;
+    }
+
+    .userChoice {
+        margin-left: 0;
+        margin-right: 5px;
+    }
+
+    .restartQuiz,
+    .submitAnswer,
+    .submitNflButton,
+    .boxingButton {
+        width: 160px;
+        font-size: 14px;
+    }
+
+    .radioDiv {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+}

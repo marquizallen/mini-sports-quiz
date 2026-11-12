@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{{url_for ('static', filename='style.css')}}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="mainDiv">
+            <div class="welcomeDiv">
+                <h1>Mini-Sports Quiz</h1>
+                <p>Welcome to my mini-sports quiz!</p>
+                <p>This application is powered by Flask, Python and Javascript.</p>
+            </div>
+            <hr>
+            <div>
+                <h2>Please enter your name:</h2>
+                <textarea id="nameInput"></textarea>
+                <button id="submitName">Submit Name</button>
+            </div>
+
+        </div>
+
+
+    </body>
+
+    <script src="static/script.js"></script>
+</html>
+<!---
+
+Put this inside the <link> component after styling.
+href="{{url_for ('static', filename='style.css')}}"
+-->

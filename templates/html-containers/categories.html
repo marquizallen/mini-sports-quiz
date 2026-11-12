@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{{url_for ('static', filename='categories.css')}}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <body>
+       
+        <div id="categoryDiv">
+            <hr>
+            <h1>Hello, {{ name }}!</h1>        
+            <h3>Please select your category:</h3> <br><br>
+           
+
+            <div id="selectionDiv">
+
+                <button id="nbaBtn">
+                    <img src="/static/images/nba-logo-transparent.png">
+                </button>
+
+                <button id="nflBtn">
+                    <img src="/static/images/NFL-logo.png">
+                </button>      
+
+                <button id="boxingBtn">
+                    <img src="/static/images/boxing_384-430-min.png">
+                </button>
+            </div> <br><br><br>
+            <hr id="bottomHr">
+        
+        </div>
+
+      
+
+    </body>
+
+    <script src="static/categories-script.js" defer></script>
+</html>
