@@ -53,7 +53,8 @@ h2 {
 .mainDiv {
     margin-top: 10%;
     border-radius: 50px;
-    font-family:'Helvetica Light';
+    font-family:'Helvetica';
+    font-weight: lighter;
     height: 500px;
     flex-direction: row;
     text-align: left;
