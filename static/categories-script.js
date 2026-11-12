@@ -4,7 +4,7 @@ const nflBtn = document.getElementById('nflBtn');
 const boxingBtn = document.getElementById('boxingBtn');
 
 let answeredQuestion = 0;
-
+let wrongAnswers = 0;
 restartQuiz();
 
 nbaBtn.addEventListener("click",async(e)=>{
@@ -119,6 +119,8 @@ async function getResults() {
         restartQuiz.textContent = "Restart Quiz";
         restartQuiz.classList.add('restartQuiz');
 
+        
+        if (wrongAnswers > 0) {
         resultsDiv.innerHTML = 
         `
         <label style="font-size: 25px;"> Your Score: 
@@ -135,9 +137,6 @@ async function getResults() {
         font-size: 20px;
         "> Correct Answers: </label> <br> <br>
         `
-
-
-
         answers.forEach(answer =>{
             const resultCard = document.createElement("div");
             resultCard.innerHTML = 
@@ -161,6 +160,29 @@ async function getResults() {
         });
 
         categoryDiv.innerHTML = resultsDiv.innerHTML;
+    } else if(wrongAnswers == 0) {
+        resultsDiv.innerHTML = 
+        `
+        <label style="font-size: 25px;"> Your Score: 
+            <strong style="font-size: 23px;">${correctAnswers.length}</strong>
+            <strong style="font-size: 18px;">out of</strong>
+            <strong style="font-size: 23px;">${answeredQuestion}</strong>
+        </label>
+
+        <br>
+        <br>
+        <br>
+
+        <label style="
+        font-size: 50px;
+        "> Well done! </label> <br> <br> 
+        
+
+        `
+        resultsDiv.append(restartQuiz);
+        categoryDiv.innerHTML = resultsDiv.innerHTML;
+    } 
+
         
     } catch (error) {
         console.log('Error: ', error);
@@ -276,7 +298,8 @@ async function sendToWrong(question, correctAnswer, userAnswer) {
         });
         const data = await response.json();
         if (data.success) {
-            displayWrongAnswers(data.wrongAnswers);
+           
+            
         
     }
     } catch (error) {
@@ -331,6 +354,7 @@ document.addEventListener("click", async(e)=> {
         sendToCorrect(question.innerHTML, correctAnswer.value, input.value);
     } else {
         sendToWrong(question.innerHTML, correctAnswer.value, input.value);
+        wrongAnswers++;
     }
 
     
@@ -362,6 +386,7 @@ document.addEventListener("click", async(e)=> {
         sendToCorrect(question.innerHTML, correctAnswer.value, input.value);
     } else {
         sendToWrong(question.innerHTML, correctAnswer.value, input.value);
+        wrongAnswers++;
     }
 
     

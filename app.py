@@ -219,6 +219,8 @@ def get_nba_questions():
         'nba_questions': questions[1]
     })
 
+  
+
 @app.route('/get-nfl-questions')
 def get_nfl_questions():
     question1 = {
